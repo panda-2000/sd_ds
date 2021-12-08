@@ -1,10 +1,6 @@
-from collections import Counter
+import pandas as pd
 
-c = Counter()
+countries_data = pd.read_csv('data/melb_data.csv', sep=',')
+# print(countries_data)
 
-c['red']+=1
-
-cars =  ['red', 'blue', 'black', 'black', 'black', 'red', 'blue', 'red', 'white']
-
-c = Counter(cars)
-print(c)
+print(round(countries_data.loc[3521,'Landsize']/countries_data.loc[1690, 'Landsize']))
